@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 /*
 Implemente uma classe `Jogador` que contenha os atributos: `mao`, 
 do tipo `Carta[]` (um vetor de cartas) e `indiceMao` do tipo `int`. 
@@ -11,4 +14,17 @@ uma carta no vetor `mao`, na posição `indiceMao`. Você deve incrementar
 */
 public class Jogador {
     
+    ArrayList<Carta> mao;
+    int indiceMao;
+
+    public Jogador(){
+        this.mao = new ArrayList<>(3);
+        this.indiceMao = 0;
+    }
+
+    public void recebeCarta(Carta c){
+        mao.add(indiceMao, c);
+        indiceMao++;
+    }
 }
+

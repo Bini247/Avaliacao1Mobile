@@ -16,6 +16,38 @@ que implementa a lógica básica do início do jogo:
 */
 public class Truco {
 
+    public Jogador jogador1;
+    public Jogador jogador2;
+    public Baralho baralho;
+    public Carta   cartaVirada;
+
+    public Truco(){
+        this.jogador1    = new Jogador();
+        this.jogador2    = new Jogador();
+        this.baralho     = new Baralho();
+    }
+
+    private void embaralhaCartas(){
+        this.baralho.embaralhar();
+    }
+
+    private void distribuiMaos(){
+        while(this.jogador1.indiceMao < 3){
+            this.jogador1.recebeCarta(this.baralho.distribuir());
+            System.out.println(jogador1.mao.get(this.jogador1.indiceMao - 1).toString());
+        }
+
+        while(this.jogador2.indiceMao < 3){
+            this.jogador2.recebeCarta(this.baralho.distribuir());
+            System.out.println(jogador2.mao.get(this.jogador2.indiceMao - 1).toString());
+        }
+    }
+
+    private void inicializaManilha(){
+        this.cartaVirada = this.baralho.distribuir();
+        System.out.println(this.cartaVirada.toString());
+    }
+
     private void imprimeMesa() {
         System.out.println("Apenas um placeholder para a impressão de mesa.");
         System.out.println("Você não precisa implementar esse método.");
@@ -28,3 +60,4 @@ public class Truco {
         imprimeMesa();
     }    
 }
+

@@ -19,7 +19,8 @@ public class Circulo
     Use a assinatura abaixo como base:
     */
     public Circulo(double raio, String cor) {
-        // escreva aqui sua resposta
+        this.raio = raio;
+        this.cor = cor;
     }
 
     // Métodos de acesso
@@ -35,5 +36,7 @@ public class Circulo
         return "Circulo [raio=" + raio + ", cor=" + cor + "]";
     }
     // O que a palavra `@Override` indica? Por que ela foi colocada neste método da classe?
-    // Resposta:
+    // Resposta: 
+    // Override, como o próprio nome indica, serve para sobreescrever um método que foi herdado, onde o comportamento de classe pai e filha se diferem.
+    // No exemplo acima ele estava sobreescrevendo o o método toString da classe Object
 }
